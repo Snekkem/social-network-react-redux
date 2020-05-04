@@ -1,0 +1,29 @@
+.nav {
+    grid-area: n;
+    font-size: 20px;
+}
+
+nav div {
+    margin: 10px;
+    margin-left: 0;
+    padding: 10px;
+    background-color: rgb(226, 232, 253);
+}
+
+nav div:hover {
+    transition: .3s;
+    background-color: rgb(195, 203, 231);
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.item {
+    color: #333333;
+}
+
+.item.active {
+    color: yellow;
+}

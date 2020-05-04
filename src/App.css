@@ -16,39 +16,7 @@ img {
   grid-template-columns: 2fr 10fr;
 }
 
-.header {
-  grid-area: h;
-  background-color: palegoldenrod;
-}
 
-.header img {
-  width: 50px;
-  margin-left: 20px;
-  margin-top: 5px;
-}
 
-.nav {
-  grid-area: n;
-  font-size: 20px;
-}
 
-nav div {
-  margin: 10px;
-  margin-left: 0;
-  padding: 10px;
-  background-color: rgb(226, 232, 253);
-}
 
-nav div:hover {
-  transition: .3s;
-  background-color: rgb(195, 203, 231);
-}
-
-nav a {
-  text-decoration: none;
-  color: #000000;
-}
-
-.content {
-  grid-area: c;
-}
