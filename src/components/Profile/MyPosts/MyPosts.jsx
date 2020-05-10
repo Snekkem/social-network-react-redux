@@ -2,17 +2,22 @@ import React from 'react';
 import css from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
     return (
         <div className={css.content}>
-            <div>
-                my post
+            <div className={css.postsBlock}>
+                <h3>My post</h3>
                 <div>
-                    new post
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                    <div>
+                        <button type='button'>Add</button>
+                    </div>
                 </div>
-                <div className='posts'>
-                    <Post message='hi, how are you?' likes='22' />
-                    <Post message="hi, i'm fine!" likes='33' />
+                <div className={css.posts}>
+                    {props.posts.map((p) => <Post message={p.post} likes={p.likes} key={p.id} />)}
                 </div>
             </div>
         </div>)
