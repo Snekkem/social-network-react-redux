@@ -5,3 +5,15 @@
 .posts {
     margin-top: 20px;
 }
+
+.textPost {
+    width: 100%;
+    border: 0;
+    margin: 10;
+    padding: 5;
+    resize: none;
+}
+
+.textPost:focus {
+    outline: none;
+}

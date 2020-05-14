@@ -6,22 +6,29 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className='app-wrapper-content'>
-          <Route path='/dialogs' render={() => <Dialogs dialogs={props.dialogs} messages={props.messages}/>} />
-          <Route path='/profile' render={() => <Profile posts={props.posts} />} />
-          <Route path='/news' component={News} />
-          <Route path='/settings' component={Settings} />
-        </div>
+    <div className="app-wrapper">
+      <Header />
+      <Navbar />
+      <div className='app-wrapper-content'>
+
+        <Route path='/dialogs' render={() =>
+          <Dialogs messagesPage={props.state.messagesPage}
+            updateNewMessageText={props.updateNewMessageText}
+            addMessage={props.addMessage} />} />
+
+        <Route path='/profile' render={() =>
+          <Profile profilePage={props.state.profilePage}
+            updateNewPostText={props.updateNewPostText}
+            addPost={props.addPost} />} />
+
+        <Route path='/news' component={News} />
+        <Route path='/settings' component={Settings} />
       </div>
-    </BrowserRouter>
+    </div>
   );
 }
 
