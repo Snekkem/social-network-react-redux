@@ -9,21 +9,22 @@ import News from './components/News/News';
 import { Route } from 'react-router-dom';
 
 const App = (props) => {
+  console.log(props);
+  
   return (
     <div className="app-wrapper">
       <Header />
       <Navbar />
       <div className='app-wrapper-content'>
-
         <Route path='/dialogs' render={() =>
-          <Dialogs messagesPage={props.state.messagesPage}
-            updateNewMessageText={props.updateNewMessageText}
-            addMessage={props.addMessage} />} />
+          <Dialogs messagesPage={props.state.dialogsReducer}
+          dispatch={props.dispatch} />} />
 
         <Route path='/profile' render={() =>
-          <Profile profilePage={props.state.profilePage}
-            updateNewPostText={props.updateNewPostText}
-            addPost={props.addPost} />} />
+          <Profile profilePage={props.state.profileReducer}
+            dispatch={props.dispatch} />}
+        />
+
 
         <Route path='/news' component={News} />
         <Route path='/settings' component={Settings} />
