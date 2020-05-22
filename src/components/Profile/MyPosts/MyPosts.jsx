@@ -1,19 +1,16 @@
 import React from 'react';
 import css from './MyPosts.module.css';
 import Post from './Post/Post';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profile-reducer';
 
 const MyPosts = (props) => {
-
-    let addPost = () => {
+    let onAddPost = () => {
         props.addPost();
-        props.dispatch(addPostActionCreator());
     };
 
     let onPostChange = (postText) => {
-        props.dispatch(updateNewPostTextActionCreator(postText));
+        props.updateNewPostText(postText);
     }
-    console.log('props :>> ', props);
+
     return (
         <div className={css.content}>
             <div className={css.postsBlock}>
@@ -24,7 +21,7 @@ const MyPosts = (props) => {
                             onChange={(e) => onPostChange(e.target.value)} value={props.newPostText} />
                     </div>
                     <div>
-                        <button type='button' onClick={addPost}>Add</button>
+                        <button type='button' onClick={onAddPost}>Add</button>
                     </div>
                 </div>
                 <div className={css.posts}>
